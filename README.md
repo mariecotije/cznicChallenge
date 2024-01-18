@@ -4,6 +4,8 @@ Code Challenge for CZ.NIC (neviditelna-univerzita.cz in Vue.js)
 
 ## Project Setup
 
+Vue 3 + Vite
+
 ```sh
 npm install
 ```
