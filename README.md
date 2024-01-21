@@ -1,6 +1,10 @@
 # cznic
 
-Code Challenge for CZ.NIC (neviditelna-univerzita.cz in Vue.js)
+Code Challenge for CZ.NIC (neviditelna-univerzita.cz in Vue.js).
+Clone the repository using git clone: https://github.com/mariecotije/cznicChallenge.git
+
+### Required package version: 
+Node.js 18 and higher
 
 ## Project Setup
 
