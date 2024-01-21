@@ -6,13 +6,14 @@ import UniDomainDetail from "../components/UniDomainDetail.vue";
 
 <template>
   <main>
-    <h1>This is home view</h1>
     <div class="main-container">
       <UniSideBar />
       <UniDomainDetail />
     </div>
   </main>
 </template>
+
+
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
 
@@ -23,8 +24,12 @@ import UniDomainDetail from "../components/UniDomainDetail.vue";
   box-sizing: border-box;
 }
 
-.container {
+
+.main-container {
   max-width: 1100px;
-  margin: 0 auto;
+  //margin: 0;
+
+  display: flex;
+
 }
 </style>
