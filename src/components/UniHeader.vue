@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="nav-container__user-menu">
+            <div class="nav-container__user-menu" @click="toggleMenu">
                 <Icon class="nav-container__user-menu-userpic" icon="mingcute:user-4-fill" color="white" width="28"
                     height="28" />
                 <div class="nav-container__user-menu-username">JAN MUSÍLEK</div>
@@ -23,7 +23,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
+
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+};
 
 </script>
 
@@ -31,6 +38,7 @@ import { Icon } from '@iconify/vue';
 header {
     background-color: #4586f6;
     color: white;
+
 
 
     .nav-container {
