@@ -1,7 +1,7 @@
 <script setup>
 import UniSideBar from "../components/UniSideBar.vue";
 //import UniDomainDetail from "../components/UniDomainDetail.vue";
-import UniUserMenu from "../components/UniUserMenu.vue";
+// import UniUserMenu from "../components/UniUserMenu.vue";
 
 </script>
 
@@ -10,7 +10,7 @@ import UniUserMenu from "../components/UniUserMenu.vue";
     <div class="main-container">
       <UniSideBar />
       <!-- <UniDomainDetail /> -->
-      <UniUserMenu />
+      <!-- <UniUserMenu /> -->
     </div>
   </main>
 </template>

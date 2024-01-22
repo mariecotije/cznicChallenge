@@ -1,5 +1,5 @@
 <template>
-    <div class="user-menu-container" :class="{ 'menu-visible': isMenuOpen }" @click="closeMenu">
+    <div class="user-menu-container">
 
         <!-- name and role -->
         <div class=" user-detail user-menu__item">
@@ -59,6 +59,10 @@ import { Icon } from '@iconify/vue';
             margin-right: 20px;
         }
 
+        p {
+            color: #4b4949;
+        }
+
         .user-detail__info>.role {
             color: #a6a1a1;
         }
@@ -67,6 +71,10 @@ import { Icon } from '@iconify/vue';
     .logout-btn {
         &__img {
             margin-right: 20px;
+        }
+
+        p {
+            color: #4b4949;
         }
     }
 
