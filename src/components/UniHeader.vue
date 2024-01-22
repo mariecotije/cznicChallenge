@@ -12,18 +12,31 @@
                 </div>
             </div>
 
-            <div class="nav-container__user-menu">
+            <div class="nav-container__user-menu" @click="toggleUserMenu">
                 <Icon class="nav-container__user-menu-userpic" icon="mingcute:user-4-fill" color="white" width="28"
                     height="28" />
                 <div class="nav-container__user-menu-username">JAN MUSÍLEK</div>
             </div>
+            <UniUserMenu v-if="isMenuOpen" @close="toggleUserMenu" />
 
         </nav>
     </header>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
+import UniUserMenu from './UniUserMenu.vue';
+
+const isMenuOpen = ref(false);
+
+const toggleUserMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+    
+};
+
+
+
 
 </script>
 
@@ -31,6 +44,7 @@ import { Icon } from '@iconify/vue';
 header {
     background-color: #4586f6;
     color: white;
+
 
 
     .nav-container {
@@ -62,6 +76,7 @@ header {
         &__user-menu {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
             &-userpic {
                 padding: 0px;
