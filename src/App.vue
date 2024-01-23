@@ -1,15 +1,3 @@
-<template>
-  <div class="navigation-bar">
-    <UniHeader />
-  </div>
-  <div class="main-container">
-    <UniSideBar />
-    <div v-if="jsonData">
-      <UniDomainDetail :data="jsonData" />
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue';
 
@@ -32,4 +20,22 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped></style>
+<template>
+  <div class="navigation-bar">
+    <UniHeader />
+  </div>
+  <div class="main-container">
+    <UniSideBar />
+    <UniDomainDetail v-if="jsonData !== null" :data="jsonData" />
+  </div>
+</template>
+
+<style scoped>
+.main-container {
+  display: flex;
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0;
+
+}
+</style>

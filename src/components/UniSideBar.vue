@@ -23,7 +23,8 @@ import { Icon } from '@iconify/vue';
     //align-items: center;
     //justify-content: center;
     height: 100vh;
-    width: 250px;
+    flex-grow: 1;
+    //width: 250px;
     background-color: #fff;
     color: #333;
 

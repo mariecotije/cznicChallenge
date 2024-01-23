@@ -1,17 +1,18 @@
 <script setup>
-import UniSideBar from "../components/UniSideBar.vue";
-import UniDomainDetail from "../components/UniDomainDetail.vue";
+// import UniSideBar from "../components/UniSideBar.vue";
+// import UniDomainDetail from "../components/UniDomainDetail.vue";
 // import UniUserMenu from "../components/UniUserMenu.vue";
 
 </script>
 
 <template>
   <main>
-    <div class="main-container">
+    <!-- <div class="main-container">
       <UniSideBar />
+      <div class="domain-detail-container"></div>
       <UniDomainDetail />
-      <!-- <UniUserMenu /> -->
-    </div>
+      <UniUserMenu /> -->
+    <!-- </div -->
   </main>
 </template>
 
@@ -30,7 +31,6 @@ import UniDomainDetail from "../components/UniDomainDetail.vue";
 .main-container {
   max-width: 1100px;
   //margin: 0;
-
   display: flex;
 
 }
