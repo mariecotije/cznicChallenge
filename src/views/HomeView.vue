@@ -1,7 +1,6 @@
 <script setup>
 import UniSideBar from "../components/UniSideBar.vue";
-import UniVerboseSwitch from "../components/UniVerboseSwitch.vue";
-//import UniDomainDetail from "../components/UniDomainDetail.vue";
+import UniDomainDetail from "../components/UniDomainDetail.vue";
 // import UniUserMenu from "../components/UniUserMenu.vue";
 
 </script>
@@ -10,8 +9,7 @@ import UniVerboseSwitch from "../components/UniVerboseSwitch.vue";
   <main>
     <div class="main-container">
       <UniSideBar />
-      <UniVerboseSwitch />
-      <!-- <UniDomainDetail /> -->
+      <UniDomainDetail />
       <!-- <UniUserMenu /> -->
     </div>
   </main>
