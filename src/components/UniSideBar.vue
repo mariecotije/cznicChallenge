@@ -21,10 +21,10 @@ import { Icon } from '@iconify/vue';
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 270px;
+    width: 260px;
     background-color: #fff;
     color: #333;
-    
+
 
     h2 {
         margin: 20px 10px;

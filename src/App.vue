@@ -13,7 +13,6 @@ onMounted(async () => {
   try {
     const response = await axios.get('/domain-detail.json');
     jsonData.value = response.data;
-    console.log('jsonData:', jsonData.value);
   } catch (error) {
     console.error('Error loading data:', error);
   }
