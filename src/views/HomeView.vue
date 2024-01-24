@@ -26,12 +26,4 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
-.main-container {
-  max-width: 1100px;
-  //margin: 0;
-  display: flex;
-
-}
 </style>

@@ -33,9 +33,11 @@ onMounted(async () => {
 <style scoped>
 .main-container {
   display: flex;
-  width: 100vw;
-  max-width: 1300px;
-  margin: 0;
-
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: #ecebeb;
 }
 </style>
