@@ -37,6 +37,7 @@ onMounted(async () => {
   padding: 0;
   margin: 0 auto;
   max-width: 100%;
-  background-color: #ecebeb;
+  background-color: #fff;
+  width: 100%;
 }
 </style>

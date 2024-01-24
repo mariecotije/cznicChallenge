@@ -61,7 +61,7 @@
                         <p class="activeFlag" v-for="(flag, index) in activeFlags" :key="index">
                             <Icon icon="carbon:checkmark-filled" color="#3bb91f" /> {{ flag.description }}
                         </p>
-                        <div v-show="showVerbose">
+                        <div class="flags-verbose" v-show="showVerbose">
                             <p class="inactiveFlag" v-for="(flag, index) in inactiveFlags" :key="index">
                                 <Icon icon="charm:circle-cross" color="red" /> {{ flag.description }}
                             </p>
@@ -211,8 +211,9 @@ const convertedTimestampEvents = {
     padding: 20px 30px;
     margin: 0;
     flex-grow: 1;
-    max-width: 80%;
+    width: 80%;
     border-left: 1px solid #d7d3d3;
+    background-color: #f5f5f5;
 
     h1 {
         margin: 0;
@@ -242,7 +243,7 @@ const convertedTimestampEvents = {
         width: 100%;
 
 
-        @media (max-width: 780px) {
+        @media (max-width: 1300px) {
             flex-direction: column;
 
         }
@@ -255,6 +256,10 @@ const convertedTimestampEvents = {
             min-width: 55%;
             margin-right: 1rem;
 
+            @media (max-width: 1300px) {
+                width: 90%;
+
+            }
 
             .auth-info {
                 display: flex;
@@ -308,7 +313,6 @@ const convertedTimestampEvents = {
                     }
                 }
             }
-
         }
     }
 
@@ -318,7 +322,12 @@ const convertedTimestampEvents = {
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        min-width: 35%;
+        min-width: 40%;
+
+        @media (max-width: 1300px) {
+            width: 60%;
+
+        }
     }
 
     .administrative-contact {
@@ -376,10 +385,9 @@ const convertedTimestampEvents = {
             &_fetched {
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: space-between;
                 align-items: flex-start;
-                width: 70%;
-                padding: 5px 0;
+                padding: 7px 0;
 
                 p {
                     padding: 8px 0 8px 10px;
