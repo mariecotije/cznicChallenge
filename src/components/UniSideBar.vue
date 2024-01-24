@@ -21,7 +21,7 @@ import { Icon } from '@iconify/vue';
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 260px;
+    width: 15%;
     background-color: #fff;
     color: #333;
 

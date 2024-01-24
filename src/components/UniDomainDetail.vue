@@ -211,8 +211,9 @@ const convertedTimestampEvents = {
     padding: 20px 30px;
     margin: 0;
     flex-grow: 1;
-    max-width: 80%;
+    width: 80%;
     border-left: 1px solid #d7d3d3;
+    background-color: #f5f5f5;
 
     h1 {
         margin: 0;
