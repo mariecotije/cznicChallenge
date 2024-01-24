@@ -9,10 +9,11 @@
   <main>
     <!-- <div class="main-container">
       <UniSideBar />
-      <div class="domain-detail-container"></div>
-      <UniDomainDetail />
-      <UniUserMenu /> -->
-    <!-- </div -->
+      <div class="domain-detail-container">
+        <UniDomainDetail />
+        <UniUserMenu />
+      </div>
+    </div> -->
   </main>
 </template>
 

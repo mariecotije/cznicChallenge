@@ -3,7 +3,8 @@
         <!-- domain name -->
         <h1>{{ data.fqdn }}</h1>
         <!-- switch toggle -->
-        <UniVerboseSwithch />
+        <ToggleVerbose @click="toggleVerbose" />
+
 
         <!-- details loaded -->
         <div class="details-container">
@@ -51,12 +52,19 @@
                     </div>
                 </div>
 
-                <div class="flags verbose card">
+
+
+                <div class="flags card">
 
                     <h2 class="card__title">State flags:</h2>
-                    <div class="card__data">
-                        <div card__data_fetched v-for="(flag, index) in flags" :key="index">
-                            {{ flag.description }}
+                    <div class="card__data_fetched">
+                        <p class="activeFlag" v-for="(flag, index) in activeFlags" :key="index">
+                            <Icon icon="carbon:checkmark-filled" color="#3bb91f" /> {{ flag.description }}
+                        </p>
+                        <div v-show="showVerbose">
+                            <p class="inactiveFlag" v-for="(flag, index) in inactiveFlags" :key="index">
+                                <Icon icon="charm:circle-cross" color="red" /> {{ flag.description }}
+                            </p>
                         </div>
                     </div>
 
@@ -83,9 +91,23 @@
                     </div>
 
                 </div>
-                <div class="administrative-contact verbose">
+                <div class="administrative-contact">
 
-                    <div class="card" v-for="(contact, index) in administrative_contacts" :key="index">
+                    <div v-if="!showVerbose" class="card">
+                        <h2 class="card__title">Administrative contacts:</h2>
+                        <div class="card__data">
+                            <div class="card__data_tags">
+                                <p v-for="(contact, index) in administrative_contacts" :key="index">{{ contact.name }}:</p>
+                            </div>
+                            <div class="card__data_fetched">
+                                <p class="highlighted" v-for="(contact, index) in administrative_contacts" :key="index">{{
+                                    contact.handle }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div v-show="showVerbose" class="card" v-for="(contact, index) in administrative_contacts" :key="index">
                         <h2 class="card__title">Administrative contact:</h2>
                         <div class="card__data">
                             <div class="card__data_tags">
@@ -150,15 +172,25 @@
 
 <script setup>
 import { defineProps, ref } from 'vue';
+import { Icon } from '@iconify/vue';
 import { convertTimestamp } from '../timestampConverter';
-import UniVerboseSwithch from './UniVerboseSwitch.vue';
+//import UniVerboseSwitch from './UniVerboseSwitch.vue';
+import ToggleVerbose from './ToggleVerbose.vue';
 
 const { data } = defineProps(['data']);
-console.log('data:', data);
 
 const showPassword = ref(false);
 
+const showVerbose = ref(false);
+const toggleVerbose = () => {
+    showVerbose.value = !showVerbose.value;
+};
+
+
 const flags = data.state_flags.flags;
+const activeFlags = flags.filter((flag) => flag.active === true);
+const inactiveFlags = flags.filter((flag) => flag.active === false);
+
 const administrative_contacts = data.administrative_contacts;
 
 const convertedTimestampEvents = {
@@ -193,6 +225,16 @@ const convertedTimestampEvents = {
     .highlighted {
         color: #4586f6;
     }
+
+    .activeFlag {
+        color: #3bb91f;
+
+    }
+
+    .inactiveFlag {
+        color: red;
+    }
+
 
     .details-container {
         display: flex;
@@ -260,7 +302,7 @@ const convertedTimestampEvents = {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    width: 50%;
+                    width: 60%;
 
                     .fetched {
                         font-weight: 300;
@@ -268,14 +310,6 @@ const convertedTimestampEvents = {
                 }
             }
 
-            .flags.verbose>.card__data {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
-                width: 100%;
-                padding-left: 15px;
-            }
         }
     }
 
@@ -335,8 +369,9 @@ const convertedTimestampEvents = {
                 font-weight: 500;
                 padding-left: 5px;
 
-
-
+                p {
+                    padding: 8px 0;
+                }
             }
 
             &_fetched {
@@ -345,6 +380,11 @@ const convertedTimestampEvents = {
                 justify-content: flex-start;
                 align-items: flex-start;
                 width: 70%;
+                padding: 5px 0;
+
+                p {
+                    padding: 8px 0 8px 10px;
+                }
 
             }
         }
