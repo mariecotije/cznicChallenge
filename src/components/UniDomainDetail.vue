@@ -14,8 +14,9 @@
                 <div class="auth-info card">
                     <div class="auth-info__hidden">
                         <p>AuthInfo: </p>
-                        <button>show</button>
-                        <p>secret password</p>
+                        <button v-if="!showPassword" @click="showPassword = !showPassword">show</button>
+                        <p v-if="showPassword">secret password</p>
+                        <button v-if="showPassword" @click="showPassword = !showPassword">hide</button>
                     </div>
                     <div class="auth-info__expiration">
                         <p>Expires at: </p>
@@ -148,12 +149,14 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 import { convertTimestamp } from '../timestampConverter';
 import UniVerboseSwithch from './UniVerboseSwitch.vue';
 
 const { data } = defineProps(['data']);
 console.log('data:', data);
+
+const showPassword = ref(false);
 
 const flags = data.state_flags.flags;
 const administrative_contacts = data.administrative_contacts;
@@ -241,6 +244,7 @@ const convertedTimestampEvents = {
                         color: #fff;
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
                         text-transform: uppercase;
+                        cursor: pointer;
                     }
                 }
 
