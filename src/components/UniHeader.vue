@@ -35,9 +35,6 @@ const toggleUserMenu = () => {
     
 };
 
-
-
-
 </script>
 
 <style lang="scss" scoped>
