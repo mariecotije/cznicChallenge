@@ -44,9 +44,6 @@ const toggleUserMenu = () => {
 header {
     background-color: #4586f6;
     color: white;
-
-
-
     .nav-container {
         display: flex;
         justify-content: space-between;

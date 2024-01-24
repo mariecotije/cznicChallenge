@@ -4,7 +4,7 @@
             <input type="checkbox">
             <span class="slider"></span>
         </label>
-        <span>Verbose view</span>
+        <span class="slider-name">Verbose view</span>
 
     </div>
 </template>
@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    width: 170px;
+    width: 180px;
     margin: 10px 5px 10px 10px;
     color: #7d7b7b;
 
@@ -75,6 +75,11 @@
             -ms-transform: translateX(26px);
             transform: translateX(26px);
         }
+    }
+
+    .slider-name {
+        font-size: 1.1rem;
+        font-weight: 300;
     }
 }
 </style>

@@ -20,14 +20,11 @@ import { Icon } from '@iconify/vue';
 .sidebar {
     display: flex;
     flex-direction: column;
-    //align-items: center;
-    //justify-content: center;
     height: 100vh;
-    width: 250px;
+    width: 270px;
     background-color: #fff;
     color: #333;
-
-    border-right: 1px solid #d7d3d3;
+    
 
     h2 {
         margin: 20px 10px;
