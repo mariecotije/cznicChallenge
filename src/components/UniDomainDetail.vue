@@ -211,7 +211,6 @@ const convertedTimestampEvents = {
     padding: 20px 30px;
     margin: 0;
     flex-grow: 1;
-    //set width to 100% of the parent
     max-width: 80%;
     border-left: 1px solid #d7d3d3;
 
